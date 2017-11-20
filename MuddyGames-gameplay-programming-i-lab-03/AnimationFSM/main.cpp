@@ -20,7 +20,7 @@ int main()
 		std::cout << "Error" << std::endl;
 	}
 
-	for (int index = 0; index < 7; index++)
+	for (int index = 0; index < 6; index++)
 	{
 		instructions[index].setCharacterSize(20);
 		instructions[index].setFont(font);
@@ -149,7 +149,7 @@ int main()
 		// Draw the Players Current Animated Sprite
 		window.draw(player.getAnimatedSprite());
 
-		for (int index = 0; index < 7; index++)
+		for (int index = 0; index < 6; index++)
 		{
 			instructions[index].setPosition(10, 75 + (index * 20 + 1));
 			window.draw(instructions[index]);

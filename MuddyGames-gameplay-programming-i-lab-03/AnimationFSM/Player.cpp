@@ -31,40 +31,34 @@ void Player::handleInput(Input in)
 	{
 	case Input::Action::IDLE:
 		m_animation.idle();
-		m_animated_sprite.spriteIdle();
 		break;
 	case Input::Action::UP:
 		//std::cout << "Player Up" << std::endl;
 		m_animation.climbing();
-		m_animated_sprite.spriteClimbing();
 		break;
 	case Input::Action::LEFT:
 		//std::cout << "Player Left" << std::endl;
 		m_animation.jumping();
-		m_animated_sprite.spriteJumping();
 		break;
 	case Input::Action::RIGHT:
 		//std::cout << "Player Idling" << std::endl;
 		m_animation.walking();
-		m_animated_sprite.spriteWalk();
 		break;
 	case Input::Action::Down:
 		//std::cout << "Player Up" << std::endl;
 		m_animation.Hammering();
-		m_animated_sprite.spriteHammer();
 		break;
 	case Input::Action::W:
 		m_animation.Swordmanship();
-		m_animated_sprite.spriteSword();
 		break;
 	case Input::Action::S:
 		//std::cout << "Player Idling" << std::endl;
 		m_animation.Shovelling();
-		m_animated_sprite.spriteShovel();
 		break;
 	default:
 		break;
 	}
+	m_animated_sprite.spriteChange(in);
 }
 
 void Player::update()

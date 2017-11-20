@@ -5,7 +5,7 @@
 #include <SFML\System\Clock.hpp>
 #include <vector>
 #include <Debug.h>
-
+#include <Input.h>
 using namespace std;
 using namespace sf;
 
@@ -24,13 +24,7 @@ public:
 	const int getCurrentFrame();
 	void update();
 	
-	void spriteIdle();
-	void spriteWalk();
-	void spriteClimbing();
-	void spriteJumping();
-	void spriteSword();
-	void spriteHammer();
-	void spriteShovel();
+	void spriteChange(Input a);
 private:
 	Clock m_clock;
 	Time m_time;

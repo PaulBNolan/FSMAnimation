@@ -12,7 +12,7 @@ int main()
 	// Create the main window
 	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
 
-	sf::Text instructions[6];
+	sf::Text instructions[7];
 
 	sf::Font font;
 	if (!font.loadFromFile("assets\\arial_narrow_7\\arial_narrow_7.ttf"))
@@ -29,9 +29,9 @@ int main()
 	instructions[1].setString("Up: Climb");
 	instructions[2].setString("Left:Jump");
 	instructions[3].setString("Right: Walk");
-	instructions[4].setString("Down:Hammer");
-	instructions[5].setString("S: Sword");
-	instructions[6].setString("W: Shovel");
+	instructions[4].setString("Down:Shovel");
+	instructions[5].setString("S: Hammer");
+	instructions[6].setString("W: Sword");
 
 
 

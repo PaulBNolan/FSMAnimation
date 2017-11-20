@@ -57,43 +57,52 @@ void AnimatedSprite::update() {
 	}
 }
 
-void AnimatedSprite::spriteIdle()
+void AnimatedSprite::spriteChange(Input a)
 {
-	animation = 0;
-	endFrame = 0;
+	switch (a.getCurrent())
+	{
+	case Input::Action::LEFT:
+	{
+		animation = 6;
+		endFrame = 11;
+		break;
+	}
+	case Input::Action::RIGHT:
+	{
+		animation = 0;
+		endFrame = 5;
+		break;
+	}
+	case Input::Action::UP:
+	{
+		animation = 12;
+		endFrame = 17;
+		break;
+	}
+	case Input::Action::Down:
+	{
+		animation = 24;
+		endFrame = 29;
+		break;
+	}
 
-}
-
-void AnimatedSprite::spriteWalk()
-{
-	animation = 0;
-	endFrame = 5;
-}
-
-void AnimatedSprite::spriteClimbing()
-{
-	animation = 12;
-	endFrame = 17;
-}
-
-void AnimatedSprite::spriteJumping()
-{
-	animation = 6;
-	endFrame = 11;
-}
-
-void AnimatedSprite::spriteSword()
-{
-	animation = 30;
-	endFrame = 35;
-}
-void AnimatedSprite::spriteHammer()
-{
-	animation = 24;
-	endFrame = 29;
-}
-void AnimatedSprite::spriteShovel()
-{
-	animation = 18;
-	endFrame = 23;
+	case Input::Action::W:
+	{
+		animation = 30;
+		endFrame = 35;
+		break;
+	}
+	case Input::Action::S:
+	{
+		animation = 18;
+		endFrame = 23;
+		break;
+	}
+	case Input::Action::IDLE:
+	{
+		animation = 0;
+		endFrame = 0;
+		break;
+	}
+	}
 }

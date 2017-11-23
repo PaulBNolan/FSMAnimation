@@ -3,6 +3,11 @@
 
 #include <State.h>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
 class Idle : public State
 {
 public:
@@ -10,6 +15,7 @@ public:
 	~Idle() {};
 	void handleInput();
 	void update();
+	//The functions for this class which are used to display text
 	void jumping(Animation* a);
 	void climbing(Animation* a);
 	void walking(Animation* a);

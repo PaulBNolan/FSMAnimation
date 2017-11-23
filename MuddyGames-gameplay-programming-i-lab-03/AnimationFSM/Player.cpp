@@ -3,6 +3,11 @@
 #include <Idle.h>
 #include <Debug.h>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
 Player::Player()
 {
 	m_animation.setCurrent(new Idle());
@@ -23,7 +28,7 @@ AnimatedSprite& Player::getAnimatedSprite()
 	m_animated_sprite.setTextureRect(m_animated_sprite.getFrame(frame));
 	return m_animated_sprite;
 }
-
+//This function is used to redirect the current to the animation class based on what enum is being used
 void Player::handleInput(Input in)
 {
 	DEBUG_MSG("Handle Input");
@@ -33,26 +38,21 @@ void Player::handleInput(Input in)
 		m_animation.idle();
 		break;
 	case Input::Action::UP:
-		//std::cout << "Player Up" << std::endl;
 		m_animation.climbing();
 		break;
 	case Input::Action::LEFT:
-		//std::cout << "Player Left" << std::endl;
 		m_animation.jumping();
 		break;
 	case Input::Action::RIGHT:
-		//std::cout << "Player Idling" << std::endl;
 		m_animation.walking();
 		break;
 	case Input::Action::Down:
-		//std::cout << "Player Up" << std::endl;
 		m_animation.Hammering();
 		break;
 	case Input::Action::W:
 		m_animation.Swordmanship();
 		break;
 	case Input::Action::S:
-		//std::cout << "Player Idling" << std::endl;
 		m_animation.Shovelling();
 		break;
 	default:
@@ -63,6 +63,5 @@ void Player::handleInput(Input in)
 
 void Player::update()
 {
-	//std::cout << "Handle Update" << std::endl;
 	m_animated_sprite.update();
 }

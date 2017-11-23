@@ -5,6 +5,12 @@
 #include <Animation.h>
 #include <AnimatedSprite.h>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
+//This class is used to represent the player
 class Player
 {
 private:

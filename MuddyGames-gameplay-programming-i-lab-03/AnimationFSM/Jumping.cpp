@@ -8,6 +8,12 @@
 
 #include <string>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
+//The belows functions are used to display text indicating a state change
 void Jumping::idle(Animation* a)
 {
 	std::cout << "Jumping -> Idle" << std::endl;
@@ -26,21 +32,18 @@ void Jumping::walking(Animation* a)
 	a->setCurrent(new Walking());
 	delete this;
 }
-
 void Jumping::shovelling(Animation *a)
 {
 	std::cout << "Jumping->Shovelling" << std::endl;
 	a->setCurrent(new Shovelling());
 	delete this;
 }
-
 void Jumping::swordmanship(Animation *a)
 {
 	std::cout << "Jumping->Swordmanship" << std::endl;
 	a->setCurrent(new Swordmanship());
 	delete this;
 }
-
 void Jumping::hammering(Animation *a)
 {
 	std::cout << "Jumping->Hammering" << std::endl;

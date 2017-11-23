@@ -1,6 +1,11 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
 class Animation
 {
 
@@ -20,6 +25,7 @@ public:
 	State* getCurrent();
 	State* getPrevious();
 	
+	//These functions are used to redirect the state pointer to the state functions
 	void idle();
 	void jumping();
 	void climbing();

@@ -1,6 +1,12 @@
 #include <Animation.h>
 #include <Idle.h>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
+
 Animation::Animation()
 {
 	m_current = new Idle();
@@ -27,6 +33,8 @@ State* Animation::getPrevious()
 {
 	return m_previous;
 }
+
+//The below functions are used to redirect the current to the state class functions which them redirect them to different classes based on what they are
 
 void Animation::idle()
 {

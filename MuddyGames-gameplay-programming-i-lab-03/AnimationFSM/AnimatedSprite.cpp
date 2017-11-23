@@ -1,5 +1,11 @@
 #include <AnimatedSprite.h>
 #include <iostream>
+
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+/// 
 AnimatedSprite::AnimatedSprite()
 {
 	m_current_frame = 0;
@@ -32,22 +38,21 @@ const IntRect& AnimatedSprite::getFrame(int n) {
 void AnimatedSprite::addFrame(IntRect& frame) {
 	m_frames.push_back(frame);
 }
-
+//This returns the frame being used
 const int AnimatedSprite::getCurrentFrame() {
 	return m_current_frame + animation;
 }
-
+//This function updates the frame being used being used
 void AnimatedSprite::update() {
 
 	if (m_clock.getElapsedTime() > m_time)
 	{
-		//if (m_frames.size() > m_current_frame + 1)
-		//{
+		//This situation switches the previous frame for the next one
 		if (m_current_frame + animation < endFrame)
 		{
 			m_current_frame++;
 		}
-		//}
+		//This makes the first default frame the used frame
 		else
 		{
 			m_current_frame = 0;
@@ -56,7 +61,7 @@ void AnimatedSprite::update() {
 		m_clock.restart();
 	}
 }
-
+//This function is used to change the set of frames used by determining the start and end point based on the currents enum
 void AnimatedSprite::spriteChange(Input a)
 {
 	switch (a.getCurrent())

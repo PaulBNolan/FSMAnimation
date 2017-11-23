@@ -1,3 +1,20 @@
+/// <summary>
+/// @mainpage FSML Lab Animation
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// 
+/// Project Summary:A program displaying and stimulating a finite state machine
+/// through the use of sprites and animatios
+/// Dates and Time of sessions: 
+/// 16/11/17 6:00 1hr
+/// 17/11/17 6:00 2hr
+/// 19/11/17 1:00 6hr
+/// 
+/// Total
+/// 9hr
+/// </summary>
+
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <AnimatedSprite.h>
@@ -11,7 +28,7 @@ int main()
 {
 	// Create the main window
 	sf::RenderWindow window(sf::VideoMode(800, 600), "SFML window");
-
+	//Instrcutions used to instruct the user on what to do
 	sf::Text instructions[7];
 
 	sf::Font font;
@@ -19,7 +36,7 @@ int main()
 	{
 		std::cout << "Error" << std::endl;
 	}
-
+	//The set up of the instruction text
 	for (int index = 0; index < 7; index++)
 	{
 		instructions[index].setCharacterSize(20);
@@ -34,8 +51,6 @@ int main()
 	instructions[6].setString("W: Sword");
 
 
-
-
 	// Load a sprite to display
 	sf::Texture texture;
 	if (!texture.loadFromFile("assets\\grid.png")) {
@@ -44,6 +59,7 @@ int main()
 	}
 
 	// Setup Players Default Animated Sprite
+	//The frames used to display the sprites
 	AnimatedSprite animated_sprite(texture);
 	animated_sprite.addFrame(sf::IntRect(3, 3, 84, 84));
 	animated_sprite.addFrame(sf::IntRect(88, 3, 84, 84));
@@ -104,6 +120,7 @@ int main()
 				// Close window : exit
 				window.close();
 				break;
+				//A case used to represent the events triggered by pressing the arrow keys
 			case sf::Event::KeyPressed:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
@@ -122,6 +139,7 @@ int main()
 					input.setCurrent(Input::Action::Down);
 				}
 				break;
+				//A case used to represent the events triggered by pressing the letter keys
 			case sf::Event::TextEntered:
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 				{
@@ -132,6 +150,7 @@ int main()
 					input.setCurrent(Input::Action::S);
 				}
 				break;
+				//The default case which is accessed when no key is pressed
 			default:
 				input.setCurrent(Input::Action::IDLE);
 				break;

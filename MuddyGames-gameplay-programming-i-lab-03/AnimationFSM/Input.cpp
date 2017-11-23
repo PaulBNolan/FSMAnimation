@@ -1,5 +1,11 @@
 #include <Input.h>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
+
 Input::Input() 
 {
 	m_current = IDLE;

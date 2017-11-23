@@ -7,6 +7,11 @@
 #include <Hammering.h>
 #include <string>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
 
 Shovelling::Shovelling()
 {
@@ -16,7 +21,7 @@ Shovelling::Shovelling()
 Shovelling::~Shovelling()
 {
 }
-
+//The belows functions are used to display text indicating a state change
 void Shovelling::idle(Animation* a)
 {
 	std::cout << "Shovelling -> Idle" << std::endl;
@@ -35,21 +40,18 @@ void Shovelling::walking(Animation* a)
 	a->setCurrent(new Walking());
 	delete this;
 }
-
 void Shovelling::jumping(Animation *a)
 {
 	std::cout << "Shovelling->Jumping" << std::endl;
 	a->setCurrent(new Shovelling());
 	delete this;
 }
-
 void Shovelling::swordmanship(Animation *a)
 {
 	std::cout << "Shovelling->Swordmanship" << std::endl;
 	a->setCurrent(new Swordmanship());
 	delete this;
 }
-
 void Shovelling::hammering(Animation *a)
 {
 	std::cout << "Shovelling->Hammering" << std::endl;

@@ -7,6 +7,12 @@
 #include <Hammering.h>
 #include <string>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
+
+//The belows functions are used to display text indicating a state change
 void Climbing::idle(Animation* a)
 {
 	std::cout << "Climbing -> Idle" << std::endl;
@@ -19,28 +25,24 @@ void Climbing::jumping(Animation* a)
 	a->setCurrent(new Jumping());
 	delete this;
 }
-
 void Climbing::walking(Animation* a)
 {
 	std::cout << "Climbing->Walking" << std::endl;
 	a->setCurrent(new Walking());
 	delete this;
 }
-
 void Climbing::shovelling(Animation *a)
 {
 	std::cout << "Climbing->Shovelling" << std::endl;
 	a->setCurrent(new Shovelling());
 	delete this;
 }
-
 void Climbing::swordmanship(Animation *a)
 {
 	std::cout << "Climbing->Swordmanship" << std::endl;
 	a->setCurrent(new Swordmanship());
 	delete this;
 }
-
 void Climbing::hammering(Animation *a)
 {
 	std::cout << "Climbing->Hammering" << std::endl;

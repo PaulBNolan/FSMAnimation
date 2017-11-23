@@ -7,6 +7,10 @@
 #include <Hammering.h>
 #include <string>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
 
 
 Swordmanship::Swordmanship()
@@ -17,7 +21,7 @@ Swordmanship::Swordmanship()
 Swordmanship::~Swordmanship()
 {
 }
-
+//The belows functions are used to display text indicating a state change
 void Swordmanship::idle(Animation* a)
 {
 	std::cout << "Swordmanship -> Idle" << std::endl;
@@ -36,21 +40,18 @@ void Swordmanship::walking(Animation* a)
 	a->setCurrent(new Walking());
 	delete this;
 }
-
 void Swordmanship::shovelling(Animation *a)
 {
 	std::cout << "Swordmanship->Shovelling" << std::endl;
 	a->setCurrent(new Shovelling());
 	delete this;
 }
-
 void Swordmanship::jumping(Animation *a)
 {
 	std::cout << "Swordmanship->Jumping" << std::endl;
 	a->setCurrent(new Jumping());
 	delete this;
 }
-
 void Swordmanship::hammering(Animation *a)
 {
 	std::cout << "Swordmanship->Hammering" << std::endl;

@@ -7,6 +7,10 @@
 #include <Hammering.h>
 #include <string>
 
+/// <summary>
+/// @Author: Paul Nolan
+/// @Version 2.0
+/// </summary>
 
 
 Walking::Walking()
@@ -17,7 +21,7 @@ Walking::Walking()
 Walking::~Walking()
 {
 }
-
+//The belows functions are used to display text indicating a state change
 void Walking::idle(Animation* a)
 {
 	std::cout << "Walking -> Idle" << std::endl;
@@ -36,21 +40,18 @@ void Walking::jumping(Animation* a)
 	a->setCurrent(new Walking());
 	delete this;
 }
-
 void Walking::shovelling(Animation *a)
 {
 	std::cout << "Walking->Shovelling" << std::endl;
 	a->setCurrent(new Shovelling());
 	delete this;
 }
-
 void Walking::swordmanship(Animation *a)
 {
 	std::cout << "Walking->Swordmanship" << std::endl;
 	a->setCurrent(new Swordmanship());
 	delete this;
 }
-
 void Walking::hammering(Animation *a)
 {
 	std::cout << "Walking->Hammering" << std::endl;
